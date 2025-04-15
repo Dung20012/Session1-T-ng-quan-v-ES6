@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Khởi tạo danh sách học viên
+        let students = [
+            { id: 1, name: "Nguyen Van A", age: 20, email: "a@example.com" },
+            { id: 2, name: "Tran Thi B", age: 21, email: "b@example.com" },
+            { id: 3, name: "Le Van C", age: 22, email: "c@example.com" }
+        ];
+
+        // 1
+        const showStudents = () => {
+            console.log("Danh sách học viên:");
+            students.forEach(({ id, name, age, email }) => {
+                console.log(`ID: ${id}, Name: ${name}, Age: ${age}, Email: ${email}`);
+            });
+        };
+
+        // 2
+        const addStudent = (student) => {
+            students.push(student);
+            console.log(`✅ Đã thêm học viên: ${student.name}`);
+        };
+
+        // 3
+        const deleteStudent = (id) => {
+            const index = students.findIndex(student => student.id === id);
+            if (index !== -1) {
+                const removed = students.splice(index, 1);
+                console.log(`🗑️ Đã xóa học viên: ${removed[0].name}`);
+            } else {
+                console.log(`❌ Không tìm thấy học viên với ID = ${id}`);
+            }
+        };
+
+        // 4
+        const searchStudentByName = (name) => {
+            const results = students.filter(student =>
+                student.name.toLowerCase().includes(name.toLowerCase())
+            );
+            console.log(`🔍 Kết quả tìm kiếm cho "${name}":`);
+            results.length > 0
+                ? results.forEach(s => console.log(`${s.id}: ${s.name} - ${s.email}`))
+                : console.log("Không tìm thấy học viên nào.");
+        };
+
+        // 5
+        const updateStudent = (id, newInfo) => {
+            const index = students.findIndex(student => student.id === id);
+            if (index !== -1) {
+                students[index] = { ...students[index], ...newInfo };
+                console.log(`✅ Đã cập nhật thông tin học viên ID = ${id}`);
+            } else {
+                console.log(`❌ Không tìm thấy học viên với ID = ${id}`);
+            }
+        };
+
+    </script>
+</body>
+
+</html>
