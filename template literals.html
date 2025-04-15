@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const sendMail = (name, companyName) => {
+            return `
+        Kính gửi ${companyName},
+
+        Tôi tên là ${name}. Tôi rất vui được liên hệ với quý công ty.
+
+        Trân trọng,
+        ${name}
+        `;
+        };
+
+        // Ví dụ:
+        console.log(sendMail("Nguyen Van A", "Công ty ABC"));
+
+    </script>
+</body>
+
+</html>
