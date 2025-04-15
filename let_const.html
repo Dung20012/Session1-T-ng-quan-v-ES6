@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function hinhTron(r) {
+            if (r <= 0) {
+                console.log("Bán kính phải lớn hơn 0");
+                return;
+            }
+
+            const pi = Math.PI; 
+            const chuVi = 2 * pi * r; 
+            const dienTich = pi * r * r; // 
+
+            console.log(`Chu vi: ${chuVi.toFixed(2)}`);
+            console.log(`Diện tích: ${dienTich.toFixed(2)}`);
+        }
+
+        hinhTron(7);
+    </script>
+</body>
+
+</html>
